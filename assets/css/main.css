@@ -6,14 +6,18 @@ body {
 
 .board {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   gap: 20px;
 }
 
 .zone {
-  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
   border: 2px dashed #bbb;
   padding: 10px;
-  min-height: 200px;
   background: #fff;
 }
 
