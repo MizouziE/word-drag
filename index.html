@@ -12,14 +12,15 @@
     <div class="board">
         <section class="zone" id="start-point">
             <h2>Words</h2>
-            <div class="card" draggable="true" id="word-2">a</div>
-            <div class="card" draggable="true" id="word-1">Read</div>
-            <div class="card" draggable="true" id="word-3">book</div>
         </section>
         <section class="zone" id="end point">
             <h2>Sentence</h2>
         </section>
     </div>
 </body>
-<script src="./assets/js/main.js"></script>
+<script type="module">
+  import { initWordGame } from '/assets/js/main.js';
+
+  initWordGame();
+</script>
 </html>
