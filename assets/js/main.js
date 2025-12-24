@@ -36,6 +36,10 @@ function setupDragAndDrop() {
       const card = document.querySelector(`.card[data-order="${draggedId}"]`);
       if (card) zone.appendChild(card);
       zone.classList.remove('active');
+
+      if (validate(e.target)) {
+        confetti();
+      }
     });
   });
 }
@@ -99,4 +103,16 @@ function shuffle(array) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
+}
+
+/**
+ * 
+ * @param {HTMLHtmlElement} el 
+ * @returns bool
+ */
+function validate(el) {
+  if (el.id !== 'end point' || document.querySelectorAll('#start-point > .card').length !== 0) return false;
+  
+  let orders = [...el.querySelectorAll('.card')].map(card => Number(card.dataset.order));
+  return orders.every((value, index) => value === index);
 }
